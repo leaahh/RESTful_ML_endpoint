@@ -6,6 +6,9 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
+        bat 'git branch -d staging'
+        bat 'git push origin --delete staging'
+        
         bat 'git checkout dev'
         bat 'git pull --allow-unrelated-histories' 
         
@@ -14,7 +17,6 @@ pipeline {
       } 
     }
     
-    /*
     stage('Build'){
       steps{ 
         echo 'Build'
@@ -49,12 +51,12 @@ pipeline {
         echo 'Clean Up : Merge and Delete staging branch'
 
         bat 'git checkout main'
-        bat 'git merge stagingb'
+        bat 'git merge staging'
         bat 'git push'
         
-        bat 'git branch -d stagingb'
-        bat 'git push origin --delete stagingb'
+        bat 'git branch -d staging'
+        bat 'git push origin --delete staging'
       } 
-    }*/
+    }
   } 
 }
