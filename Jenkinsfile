@@ -6,14 +6,11 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
-        bat 'git merge origin/dev'
-        
-        
-        /*bat 'git checkout dev'
+        bat 'git checkout dev'
         bat 'git pull'
         
         bat 'git checkout -b stagingb dev'
-        bat 'git push --set-upstream origin stagingb'*/
+        bat 'git push --set-upstream origin stagingb'
       } 
     }
     
