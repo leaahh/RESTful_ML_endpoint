@@ -9,8 +9,8 @@ pipeline {
         bat 'git checkout dev'
         bat 'git pull'
         
-        bat 'git checkout -b stagingb dev'
-        bat 'git push --set-upstream origin stagingb'
+        /*bat 'git checkout -b stagingb dev'
+        bat 'git push --set-upstream origin stagingb'*/
       } 
     }
     
