@@ -6,9 +6,6 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
-        bat 'git branch -d staging'
-        bat 'git push origin --delete staging'
-        
         bat 'git checkout dev'
         bat 'git pull --allow-unrelated-histories' 
         
