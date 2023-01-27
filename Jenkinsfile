@@ -6,16 +6,21 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
-        bat 'git branch -d staging'
+        bat 'git branch -d stagingb'
+        bat 'git push origin --delete stagingb'
         
-        bat 'git checkout dev'
+        bat 'git merge origin/dev'
+        
+        
+        /*bat 'git checkout dev'
         bat 'git pull'
         
         bat 'git checkout -b stagingb dev'
-        bat 'git push --set-upstream origin stagingb'
+        bat 'git push --set-upstream origin stagingb'*/
       } 
     }
     
+    /*
     stage('Build'){
       steps{ 
         echo 'Build'
@@ -56,6 +61,6 @@ pipeline {
         bat 'git branch -d stagingb'
         bat 'git push origin --delete stagingb'
       } 
-    }
+    }*/
   } 
 }
