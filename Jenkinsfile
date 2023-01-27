@@ -6,9 +6,6 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
-        bat 'git branch -d stagingb'
-        bat 'git push origin --delete stagingb'
-        
         bat 'git merge origin/dev'
         
         
