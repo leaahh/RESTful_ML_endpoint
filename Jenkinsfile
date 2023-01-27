@@ -6,20 +6,16 @@ pipeline {
       steps{ 
         echo 'Create Staging branch'
         
-        // bat 'git branch -d staging'
-        // bat 'git push origin --delete staging'
+        bat 'git branch -d staging'
         
         bat 'git checkout dev'
-        // bat 'git pull'
+        bat 'git pull'
         
-        //bat 'git checkout -b staging dev'
-        bat 'git branch staging'
-        //bat 'git checkout staging'
-        bat 'git push --set-upstream origin staging'
+        bat 'git checkout -b stagingb dev'
+        bat 'git push --set-upstream origin stagingb'
       } 
     }
     
-    /*
     stage('Build'){
       steps{ 
         echo 'Build'
@@ -54,12 +50,12 @@ pipeline {
         echo 'Clean Up : Merge and Delete staging branch'
 
         bat 'git checkout main'
-        bat 'git merge staging'
+        bat 'git merge stagingb'
         bat 'git push'
         
-        bat 'git branch -d staging'
-        bat 'git push origin --delete staging'
+        bat 'git branch -d stagingb'
+        bat 'git push origin --delete stagingb'
       } 
-    }*/
+    }
   } 
 }
