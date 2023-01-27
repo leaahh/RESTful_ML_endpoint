@@ -7,7 +7,7 @@ pipeline {
         echo 'Create Staging branch'
         
         bat 'git checkout dev'
-        bat 'git pull'
+        bat 'git pull --allow-unrelated-histories'
         
         /*bat 'git checkout -b stagingb dev'
         bat 'git push --set-upstream origin stagingb'*/
