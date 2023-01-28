@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   stages{ 
-    stage('Create Staging branch'){ 
+    stage('Create Staging branch'){  
       steps{ 
         echo 'Create Staging branch'
         
